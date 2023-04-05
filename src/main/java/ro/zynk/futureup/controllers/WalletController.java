@@ -74,4 +74,13 @@ public class WalletController {
         }
 
     }
+
+    @GetMapping(value = "/get_total_value_in_us/{walletId}")
+    public ResponseEntity<BaseResponse> getTotalValueInUSDFromWallet(@PathVariable("walletId") Long walletId) {
+        try {
+            return new ResponseEntity<>(walletService.getTotalValueInUSD(walletId), HttpStatus.OK);
+        } catch(NotFoundException e) {
+            return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+        }
+    }
 }

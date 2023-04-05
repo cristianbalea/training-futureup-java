@@ -136,4 +136,8 @@ public class WalletService {
         }
         return new ListCoinTransactionResponse(coinTransactionResponses);
     }
+
+    public TotalValueResponse getTotalValueInUSD(Long walletId) {
+        return new TotalValueResponse(getAllCoinsFromWallet(walletId));
+    }
 }
