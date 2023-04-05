@@ -75,7 +75,7 @@ public class WalletController {
 
     }
 
-    @GetMapping(value = "/get_total_value_in_us/{walletId}")
+    @GetMapping(value = "/get_total_value_in_usd/{walletId}")
     public ResponseEntity<BaseResponse> getTotalValueInUSDFromWallet(@PathVariable("walletId") Long walletId) {
         try {
             return new ResponseEntity<>(walletService.getTotalValueInUSD(walletId), HttpStatus.OK);
