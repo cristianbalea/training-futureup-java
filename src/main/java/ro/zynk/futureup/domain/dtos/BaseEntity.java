@@ -1,6 +1,7 @@
 package ro.zynk.futureup.domain.dtos;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @MappedSuperclass
 public class BaseEntity {

@@ -1,12 +1,14 @@
 package ro.zynk.futureup.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ro.zynk.futureup.domain.dtos.Coin;
 import ro.zynk.futureup.domain.dtos.CoinAmount;
 import ro.zynk.futureup.domain.dtos.Wallet;
 import ro.zynk.futureup.domain.repositories.CoinAmountRepository;
 import ro.zynk.futureup.domain.repositories.CoinRepository;
+import ro.zynk.futureup.domain.repositories.TransactionRepository;
 import ro.zynk.futureup.domain.repositories.WalletRepository;
 
 import javax.annotation.PostConstruct;
@@ -15,14 +17,16 @@ import javax.annotation.PostConstruct;
 public class DbInitializer {
     private final CoinRepository coinRepository;
     private final WalletRepository walletRepository;
+    private final TransactionRepository transactionRepository;
 
     @Autowired
-    public DbInitializer(CoinRepository coinRepository, WalletRepository walletRepository, CoinAmountRepository coinAmountRepository) {
+    public DbInitializer(CoinRepository coinRepository, WalletRepository walletRepository, CoinAmountRepository coinAmountRepository, TransactionRepository transactionRepository) {
         this.coinRepository = coinRepository;
         this.walletRepository = walletRepository;
+        this.transactionRepository = transactionRepository;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void initializer() {
         Wallet wallet = new Wallet("Wallet Andrei");
         walletRepository.save(wallet);
@@ -39,6 +43,5 @@ public class DbInitializer {
         wallet.getCoinAmounts().add(coinAmountBTC);
         wallet.getCoinAmounts().add(coinAmountETH);
         walletRepository.save(wallet);
-
     }
 }
