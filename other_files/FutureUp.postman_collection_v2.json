@@ -139,14 +139,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/wallets/42",
+					"raw": "localhost:8080/wallets/2",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"wallets",
-						"42"
+						"2"
 					]
 				}
 			},
@@ -159,7 +159,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"walletId\" : 42,\r\n    \"coinId\": 14,\r\n    \"amount\" : 2\r\n}",
+					"raw": "{\r\n    \"walletId\" : 2,\r\n    \"coinId\": 14,\r\n    \"amount\" : 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -187,7 +187,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"coinId\" : 32,\r\n    \"coinAmountId\": 55,\r\n    \"amount\" : 1\r\n\r\n}",
+					"raw": "{\r\n    \"coinId\" : 15,\r\n    \"coinAmountId\": 27,\r\n    \"amount\" : 1\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -226,7 +226,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/wallets/get_all_owned_coins/42",
+					"raw": "localhost:8080/wallets/get_all_owned_coins/2",
 					"host": [
 						"localhost"
 					],
@@ -234,7 +234,7 @@
 					"path": [
 						"wallets",
 						"get_all_owned_coins",
-						"42"
+						"2"
 					]
 				}
 			},
@@ -258,7 +258,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/wallets/get_total_value_in_usd/42",
+					"raw": "localhost:8080/wallets/get_total_value_in_usd/2",
 					"host": [
 						"localhost"
 					],
@@ -266,7 +266,7 @@
 					"path": [
 						"wallets",
 						"get_total_value_in_usd",
-						"42"
+						"2"
 					]
 				}
 			},
@@ -297,7 +297,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/transactions/greater?totalPrice=600",
+					"raw": "http://localhost:8080/transactions/greater?amountOfUsd=100",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -309,8 +309,8 @@
 					],
 					"query": [
 						{
-							"key": "totalPrice",
-							"value": "600"
+							"key": "amountOfUsd",
+							"value": "100"
 						}
 					]
 				}
