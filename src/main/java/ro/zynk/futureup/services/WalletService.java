@@ -17,6 +17,7 @@ import ro.zynk.futureup.exceptions.NotEnoughFundsException;
 import ro.zynk.futureup.exceptions.NotFoundException;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -83,7 +84,7 @@ public class WalletService {
         coinAmountRepository.save(coinAmount);
 
         Transaction transaction = new Transaction();
-        transaction.setTransactionDate(new Date(System.currentTimeMillis()));
+        transaction.setTransactionDate(LocalDateTime.now());
         transaction.setAmount(coinAmount.getAmount());
         transaction.setTotalValue((float) (buyCoinRequest.getAmount() * coin.getValue()));
         transaction.setCoin(coinOpt.get());

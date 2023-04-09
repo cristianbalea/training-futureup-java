@@ -7,6 +7,7 @@ import ro.zynk.futureup.domain.dtos.Coin;
 import ro.zynk.futureup.domain.dtos.Transaction;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -14,7 +15,7 @@ import java.sql.Date;
 public class TransactionResponse extends BaseResponse {
     private Long id;
 
-    private Date transactionDate;
+    private LocalDateTime transactionDate;
 
     private Double amount;
 

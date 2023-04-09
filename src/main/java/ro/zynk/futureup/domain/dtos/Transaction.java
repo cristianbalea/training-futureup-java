@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -17,7 +17,7 @@ import java.sql.Date;
 public class Transaction extends BaseEntity {
 
     @Column
-    private Date transactionDate;
+    private LocalDateTime transactionDate;
     @Column
     private Double amount;
     @Column
